@@ -1,0 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace comp
+{
+    public class Markcomparer : IComparer<Student>
+    {
+        public int Compare(Student? x, Student? y)
+        {
+            return x.Marks.CompareTo(y.Marks);
+            // return string.Compare(x.EmpName,y.EmpName);
+        }
+    }
+}
