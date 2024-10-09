@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace comp
+{
+        public class Student : IComparable
+        {
+            public int studentId { get; set; }
+            public string studentName { get; set; }
+            public string city { get; set; }
+            public int Marks { get; set; }
+            public Student()
+            {
+
+            }
+            public Student(int id, string name,string city, int Mark)
+            {
+                studentId = id;
+                studentName = name;
+                Marks = Mark;
+            }
+
+            public int CompareTo(object obj)
+            {
+                Student xobj = obj as Student;
+                return this.studentName.CompareTo(xobj.studentName);
+            }
+
+            public override string ToString()
+            {
+                return studentId + "\t" + studentName + "\t" + Marks;
+            }
+        }
+}
