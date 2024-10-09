@@ -1,0 +1,46 @@
+using System.Collections;
+
+namespace comp
+
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            List<Student> list = new List<Student>();
+
+            Student s1 = new Student(102, "Shyam","chennai", 80);
+            Student s2 = new Student(103, "jeevan","banglore", 60);
+            Student s3 = new Student(104, "john","karnataka", 90);
+            Student s4 = new Student(105, "billy","delhi",30);
+            Student s5 = new Student(106, "rock","Kolkata",40);
+
+
+            list.Add(s1);
+            list.Add(s2);
+            list.Add(s3);
+            list.Add(s4);
+            list.Add(s5);
+         
+            //default sorting is done by implimenting IComparable
+            //Sorting will be done by salary in consideration
+            list.Sort();
+
+            foreach (Student e in list)
+            {
+                Console.WriteLine(e);
+            }
+            Console.WriteLine("===================================");
+
+            list.Sort(new Markcomparer());
+            foreach (Student e in list)
+            {
+                Console.WriteLine(e);
+            }
+            Console.WriteLine("===================================");
+
+        }
+    }
+}
